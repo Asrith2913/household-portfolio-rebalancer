@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #1c1914;
+  --ink-soft: #5c564c;
+  --paper: #f3efe6;
+  --surface: #fbf8f1;
+  --mist: #e6dfd2;
+  --line: #d4cbb8;
+  --forest: #21554a;
+  --forest-soft: #dceae4;
+  --copper: #9a3412;
+  --copper-soft: #f4e1d6;
+  --gold: #b45309;
+  --gold-soft: #f3e4d1;
+  --slate: #5c6560;
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-mist: var(--mist);
+  --color-line: var(--line);
+  --color-forest: var(--forest);
+  --color-forest-soft: var(--forest-soft);
+  --color-copper: var(--copper);
+  --color-copper-soft: var(--copper-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-slate: var(--slate);
+  --font-sans: var(--font-ui);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(1000px 520px at 8% -8%, #ebe4d4 0%, transparent 55%),
+    radial-gradient(800px 420px at 100% 0%, #dfeae3 0%, transparent 46%),
+    linear-gradient(180deg, #f6f1e7 0%, var(--paper) 42%, #efe8db 100%);
+  font-family: var(--font-ui), system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--forest) 28%, white);
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+input[type="range"] {
+  accent-color: var(--forest);
+}

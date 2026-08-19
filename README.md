@@ -96,8 +96,8 @@ Next.js App Router, all local. Rebalancing is a pure function so it can be teste
 - **Fractional shares, 3 decimals.** Matches the export (the brokerage already holds fractional ETFs).
 - **No tax lot optimization.** Correctness of cash isolation beat a half-built tax engine in the time budget.
 
-## AI collaboration (for the video)
+## AI collaboration
 
-One concrete redirection: a first-pass mapping used the export’s `Type` column as asset class. On this file that is wrong — `FNILX` in both IRAs is `Type=Cash` and is still a US stock fund. The mapping was rewritten to be ticker- and description-driven, and a test locks that in.
+One concrete redirection: a first-pass mapping used the export’s `Type` column as asset class. In this file, that is wrong — `FNILX` in both IRAs is `Type=Cash` and is still a US stock fund. The mapping was rewritten to be ticker- and description-driven, and a test locks that in.
 
-A second: the prompt asked for CSV, but the artifact is XLSX with the same columns. The tool reads both rather than forcing a hand conversion at runtime.
+A second: the prompt asked for CSV, but in my case the artifact is XLSX with the same columns. So, I've built the tool that can read both rather than forcing a hand conversion at runtime.
